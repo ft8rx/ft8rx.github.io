@@ -50,6 +50,8 @@ FT8RX has its own clock that can be adjusted comfortably without having to chang
 
 For example, if [time.is](https://time.is) reports that your clock is 1.3 seconds behind, you should increase FT8RX' time delta by pressing the `+0.1s` button until you see `FT8RX Δt 1.3s` in the lower left corner. Hopefully now you should start seeing results after the next pass.
 
+Important note: Android will modify your phone's time settings sooner or later. In this case, your `FT8RX Δt`-value may become invalid and you will have to adjust it again.
+
 ### 4. Fine-Tuning
 
 You can (and should) further fine tune your clock towards the incoming signals. Example:
