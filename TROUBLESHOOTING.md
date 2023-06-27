@@ -50,16 +50,18 @@ FT8RX has its own clock that can be adjusted comfortably without having to chang
 
 For example, if [time.is](https://time.is) reports that your clock is 1.3 seconds behind, you should increase FT8RX' time delta by pressing the `+0.1s` button until you see `FT8RX Δt 1.3s` in the lower left corner. Hopefully now you should start seeing results after the next pass.
 
+If you have an internet connection, you can use the "NTP SYNC" button and FT8RX will attempt to synchronize its internal time delta for you.
+
 Important note: Android will modify your phone's time settings sooner or later. In this case, your `FT8RX Δt`-value may become invalid and you will have to adjust it again.
 
 ### 4. Fine-Tuning
 
 You can (and should) further fine tune your clock towards the incoming signals. Example:
 
-![Image of spectrometer](img/handbook_finetune.png "Image of spectrometer")
+![Image of spectrometer](img/handbook_finetune.png "Image of decoded signals received too early")
 
 Here we can see that most signals were received with a time delta of -0.7 to -0.9 seconds. This means these signals were received too early (our clock is most likely lagging behind). You can fine tune this by pressing the `+0.1s` button until you see `FT8RX Δt 0.8s` in the lower left corner. After one pass you'll see that the next signals received are much closer to zero:
 
-![Image of spectrometer](img/handbook_finetune_done.png "Image of spectrometer")
+![Image of spectrometer](img/handbook_finetune_done.png "Image of decoded signals with proper time adjustment")
 
-Why is this important? Because all signals received earlier than -1.2s or later than +1.2s can't be decoded.
+Why is this important? Because all signals received earlier than -0.7 seconds (since v1.4.5) or later than +2.5 seconds won't be decoded.
